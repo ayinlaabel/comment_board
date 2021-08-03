@@ -3,8 +3,12 @@
 }
 
 body {
-  background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(/images/bg.jpeg);
+  background: linear-gradient(rgba(60, 19, 97, .7), rgba(60, 19, 97, .7)), url(/images/bg.jpeg);
   background-size: 300px;
+}
+
+.margin-left {
+  margin-left: 52rem;
 }
 
 .content {

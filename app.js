@@ -3,9 +3,24 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
+mongoose.connect('mongodb+srv://kraneabel:kraneabel@wish.mgdea.mongodb.net/wish?retryWrites=true&w=majority', {useNewUrlParser: true,  useUnifiedTopology: true});
+
+const db = mongoose.connection;
+
+//Handle DB Errors
+db.on('open', ()=>{
+  console.log('Mongoose Database start successfully on port 27017 ...');
+});
+
+//database errors with startup
+db.once('error', (err) =>{
+  console.log(err);
+});
 
 var app = express();
 
