@@ -18,8 +18,9 @@ router.post('/', (req, res, next) => {
   wish.phone = req.body.phone;
   wish.message = req.body.message;
 
-    if (wish.firstName ==='' && wish.lastname ==='') {
+    if (req.body.firstName ==='' && req.body.lastName==='') {
       wish.firstName = 'Annonymous';
+      console.log(wish.firstName)
     } 
 
     wish.save().then(
@@ -31,7 +32,13 @@ router.post('/', (req, res, next) => {
 });
 
 router.get('/wishes', (req, res, next) => {
-  res.render('wishes');
+  Wish.find({}).then(
+    (wishes) => {
+      console.log(wishes)
+     res.render('wishes', { 
+       title: 'Mummy Aderemi @ 80',
+       wishes });
+  })
 });
 
 module.exports = router;

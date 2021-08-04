@@ -23,3 +23,11 @@ img {
   transform: translate(-50%, -50%);
   height: 500px;
 }
+
+.card-main {
+  background: #fff;
+  margin-bottom: 1rem;
+  margin-top: .5rem;
+  width: 100%;
+  border-radius: 5px;
+}
