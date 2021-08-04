@@ -127,7 +127,7 @@ h5.h5-2 {
 
 
 /* // X-Small devices (portrait phones, less than 576px) */
-@media screen and (min-width: 375px) and (max-width: 576px) { 
+@media screen and (min-width: 320px) and (max-width: 576px) { 
   /* .margin-left {
       margin-left: 0;
   }
