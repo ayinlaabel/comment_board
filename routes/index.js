@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 router.post('/', (req, res, next) => {
   const wish = new Wish();
 
-  wish.firstName = req.body.firstName;
+  
   wish.lastName = req.body.lastName;
   wish.email = req.body.email;
   wish.phone = req.body.phone;
@@ -21,13 +21,19 @@ router.post('/', (req, res, next) => {
     if (req.body.firstName ==='' && req.body.lastName==='') {
       wish.firstName = 'Annonymous';
       console.log(wish.firstName)
-    } 
-
-    wish.save().then(
-      () => {
-        res.redirect('/wishes');
-      }
-    );
+      wish.save().then(
+        () => {
+          res.redirect('/wishes');
+        }
+      );
+    } else {
+      wish.firstName = req.body.firstName;
+      wish.save().then(
+        () => {
+          res.redirect('/wishes');
+        }
+      );
+    }
   
 });
 

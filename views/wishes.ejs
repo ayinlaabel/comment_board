@@ -41,25 +41,30 @@
 
     <div class="container">
         <div class="content">
-            <% for (let wish of wishes) { %>
-                <div class="card-main">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <%= wish.firstName %>
-                                <%= wish.lastName %>
-                        </h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">
-                            <%= wish.message %>
-                        </p>
-                    </div>
+            <% if (wishes.length < 1 ){ %>
+                <div class="noWish">
+                    <p>NO Wishes</p>
                 </div>
-
+            <% }else{ %>
+                <% for (let wish of wishes) { %>
+                    <div class="card-main">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= wish.firstName %>
+                                    <%= wish.lastName %>
+                            </h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">
+                                <%= wish.message %>
+                            </p>
+                        </div>
+                    </div>
+                <% } %>
             <% } %>
         </div>
     </div>
 
-    
+
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
