@@ -2,67 +2,73 @@
 <html>
 
 <head>
-    <title>
-        <%= title %>
-    </title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">Mummy Aderemi</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse margin-left" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/wishes">Wishes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class=" active btn btn-primary" aria-current="page" href="#" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">Send Your Wish</a>
-                    </li>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Mummy Aderemi</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse margin-left" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/wishes">Wishes</a>
+          </li>
+          <li class="nav-item">
+            <a class=" active btn btn-primary" aria-current="page" href="#" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">Send Your Wish</a>
+          </li>
 
-                </ul>
+        </ul>
 
-            </div>
+      </div>
 
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="content">
-            <% if (wishes.length < 1 ){ %>
-                <div class="noWish">
-                    <p>NO Wishes</p>
-                </div>
-            <% }else{ %>
-                <% for (let wish of wishes) { %>
-                    <div class="card-main">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <%= wish.firstName %>
-                                    <%= wish.lastName %>
-                            </h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">
-                                <%= wish.message %>
-                            </p>
-                        </div>
-                    </div>
-                <% } %>
-            <% } %>
-        </div>
     </div>
+  </nav>
+
+  <div class="container">
+    <div class="content">
+      <% if (wishes.length < 1 ){ %>
+        <div class="wish-container">
+          <div class="noWish">
+            <div class="noWish-content">
+              <h1>NO Wishes Yet.</h1>
+              <p>Be the first to send wish</p>
+              <a href="" class="btn btn-secondary"aria-current="page" href="#" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">Send your wish</a>
+            </div>
+          </div>
+        </div>
+        <% }else{ %>
+          <% for (let wish of wishes) { %>
+            <div class="card-main">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%= wish.firstName %>
+                    <%= wish.lastName %>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">
+                  <%= wish.message %>
+                </p>
+              </div>
+            </div>
+            <% } %>
+              <% } %>
+    </div>
+  </div>
 
 
   <!-- Modal -->
@@ -92,20 +98,21 @@
             <div class="row mb-3">
               <div class="col">
                 <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                    name="email">
                   <label for="floatingInput">Email Address</label>
                 </div>
               </div>
               <div class="col">
-                <div class="form-floating mb-3"> 
+                <div class="form-floating mb-3">
                   <input type="phone" class="form-control" id="floatingInput" placeholder="" name="phone">
                   <label for="floatingInput">Telephone</label>
                 </div>
               </div>
             </div>
             <div class="form-floating mb-3">
-              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
-                rows="20" name="message"></textarea>
+              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" rows="20"
+                name="message"></textarea>
               <label for="floatingTextarea">Comments</label>
             </div>
           </div>

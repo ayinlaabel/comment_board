@@ -11,19 +11,72 @@ body {
   margin-left: 52rem;
 }
 
-.content {
+/* .content {
   position: relative;
   height: 90vh;
+  width: 100%;
 }
 
-img {
+.main-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 500px;
+  width: 100%;
+  background: rgba(60, 19, 97, .7);
+} */
+
+img {
+  height: 400px;
+  padding: 1rem;
+  margin-left: 2rem;
 }
 
+.desc {
+  position: relative;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  margin-left: 1rem;
+}
+
+.desc-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 1;
+}
+
+.desc-content p {
+  font-size: 14px;
+}
+
+.desc-content h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.desc-content h5 {
+  line-height: .1;
+}
+
+p.p-2 {
+  text-transform: uppercase;
+  line-height: 2;
+  color: #faab00;
+  font-weight: 600;
+}
+
+h5.h5-2 {
+  text-transform: uppercase;
+  color: #faab00;
+  font-weight: 600;
+  letter-spacing: 2rem;
+}
+
+/* CSS STYLE FOR WISHES PAGE */
 .card-main {
   background: #fff;
   margin-bottom: 1rem;
@@ -31,3 +84,80 @@ img {
   width: 100%;
   border-radius: 5px;
 }
+.wish-container {
+  position: relative;
+  height: 80vh;
+}
+.noWish {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  height: 20rem;
+  width: 100%;
+}
+
+.noWish-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.noWish-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #808080;
+}
+
+
+/* // X-Small devices (portrait phones, less than 576px) */
+@media screen and (max-width: 576px) { 
+  .margin-left {
+      margin-left: 0;
+  }
+  .content {
+    position: relative;
+    height: 90vh;
+    width: 100%;
+  }
+  .main-content {
+    position: relative;
+    top: 5px;
+  }
+
+  .col-md-6 {
+    width: 100%;
+  }
+}
+
+/* // Small devices (landscape phones, less than 768px) */
+@media screen and (min-width: 577px) and (max-width: 768px) { 
+  .margin-left {
+    margin-left: 0;
+}
+}
+
+/* // Medium devices (tablets, less than 992px) */
+@media screen and (min-width: 769px) and (max-width: 992px) { 
+  .margin-left {
+    margin-left: 34rem;
+}
+}
+
+/* // Large devices (desktops, less than 1200px) */
+@media screen and (min-width: 993px) and (max-width: 1200px) { 
+  .margin-left {
+    margin-left: 47rem;
+}
+}
+
+/* // X-Large devices (large desktops, less than 1400px) */
+@media screen and (min-width: 1201px) and (max-width: 1400px) { 
+ 
+}
+
+/* // XX-Large devices (larger desktops)
+// No media query since the xxl breakpoint has no upper bound on its width */
