@@ -7,11 +7,11 @@ body {
   background-size: 300px;
 }
 
-/* .margin-left {
+.margin-left {
   margin-left: 52rem;
 }
 
-.content {
+/* .content {
   position: relative;
   height: 90vh;
   width: 100%;
@@ -234,6 +234,12 @@ hr {
   transform: translate(0%, 0%);
   text-align: center;
   line-height: 1;
+  }
+
+  .desc-content h1 {
+    font-size: 3.5rem !important;
+    text-transform: uppercase;
+    font-weight: 900;
   }
 }
 
